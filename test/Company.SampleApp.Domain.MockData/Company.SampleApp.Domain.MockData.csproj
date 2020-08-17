@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Company.SampleApp.Domain.Client\Company.SampleApp.Domain.Client.csproj" />
+	<ProjectReference Include="..\..\src\Company.SampleApp.Domain.Models\Company.SampleApp.Domain.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Client\Messages\" />
+  </ItemGroup>
+
+</Project>

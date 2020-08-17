@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+	<PackageReference Include="AutoMapper" Version="10.0.0" />
+	<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.0.1" />
+	<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.7" />
+	<PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.7" />
+	<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.7" />
+	<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.7" />
+	<PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="2.1.2" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Company.SampleApp.Repositories.Interfaces\Company.SampleApp.Repositories.Interfaces.csproj" />
+	<ProjectReference Include="..\..\src\Company.SampleApp.Services.Core\Company.SampleApp.Services.Core.csproj" />
+	<ProjectReference Include="..\..\src\Company.SampleApp.Services.Interfaces\Company.SampleApp.Services.Interfaces.csproj" />
+    <ProjectReference Include="..\Company.SampleApp.Domain.MockData\Company.SampleApp.Domain.MockData.csproj" />
+	<ProjectReference Include="..\..\src\Company.SampleApp.Domain.Client\Company.SampleApp.Domain.Client.csproj" />
+	<ProjectReference Include="..\..\src\Company.SampleApp.Domain.Models\Company.SampleApp.Domain.Models.csproj" />
+  </ItemGroup>
+
+</Project>
