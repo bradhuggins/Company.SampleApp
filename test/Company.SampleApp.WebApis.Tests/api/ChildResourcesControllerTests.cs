@@ -70,7 +70,7 @@ namespace Company.SampleApp.WebApis.Tests.api
             // Arrange
             ChildResourcesController target = new ChildResourcesController(_service);
             ChildResource expected = _mockdata.UpdateChildResource1();
-            expected.Name = "Updated Lookup Type from UpdateTest";
+            expected.Name = Guid.NewGuid().ToString();
 
             // Act
             var actual = target.Put(expected.Id, expected) as OkObjectResult;
@@ -169,7 +169,7 @@ namespace Company.SampleApp.WebApis.Tests.api
             // Arrange
             ChildResourcesController target = new ChildResourcesController(_errorService);
             ChildResource expected = _mockdata.ChildResource1();
-            expected.Name = "Updated Lookup Type from UpdateTest";
+            expected.Name = Guid.NewGuid().ToString();
 
             // Act
             var actual = target.Put(expected.Id, expected) as ObjectResult;

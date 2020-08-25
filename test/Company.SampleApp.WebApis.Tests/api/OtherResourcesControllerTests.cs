@@ -11,18 +11,18 @@ using Microsoft.AspNetCore.Mvc;
 namespace Company.SampleApp.WebApis.Tests.api
 {
     [TestClass]
-    public class ResourcesControllerTests : ControllerTestsBase
+    public class OtherResourcesControllerTests : ControllerTestsBase
     {
-	    private ResourceServiceMock _service = new ResourceServiceMock();
-        private ResourceServiceExceptionMock _errorService = new ResourceServiceExceptionMock();
-        private Domain.MockData.Client.Dtos.Resources _mockdata =  new Domain.MockData.Client.Dtos.Resources();
+	    private OtherResourceServiceMock _service = new OtherResourceServiceMock();
+        private OtherResourceServiceExceptionMock _errorService = new OtherResourceServiceExceptionMock();
+        private Domain.MockData.Client.Dtos.OtherResources _mockdata =  new Domain.MockData.Client.Dtos.OtherResources();
 
 		[TestMethod]
         public void CreateTest()
         {
             // Arrange
-            ResourcesController target = new ResourcesController(_service);
-            Resource expected = _mockdata.NewResource();
+            OtherResourcesController target = new OtherResourcesController(_service);
+            OtherResource expected = _mockdata.NewOtherResource();
 
             // Act
             var actual = target.Post(expected) as CreatedAtRouteResult;
@@ -35,8 +35,8 @@ namespace Company.SampleApp.WebApis.Tests.api
         public void ReadTest()
         {
             // Arrange
-            ResourcesController target = new ResourcesController(_service);
-            Resource expected = _mockdata.Resource1();
+            OtherResourcesController target = new OtherResourcesController(_service);
+            OtherResource expected = _mockdata.OtherResource1();
 
             // Act
             var actual = target.Get(expected.Id) as OkObjectResult;
@@ -49,9 +49,9 @@ namespace Company.SampleApp.WebApis.Tests.api
         public void SearchByNameTest()
         {
             // Arrange
-            ResourcesController target = new ResourcesController(_service);
-            Resource expected = _mockdata.Resource1();
-            ResourceSearchCriteria criteria = new ResourceSearchCriteria()
+            OtherResourcesController target = new OtherResourcesController(_service);
+            OtherResource expected = _mockdata.OtherResource1();
+            OtherResourceSearchCriteria criteria = new OtherResourceSearchCriteria()
             {
                 NameStartsWith = expected.Name
             };
@@ -68,8 +68,8 @@ namespace Company.SampleApp.WebApis.Tests.api
         public void UpdateTest()
         {
             // Arrange
-            ResourcesController target = new ResourcesController(_service);
-            Resource expected = _mockdata.UpdateResource1();
+            OtherResourcesController target = new OtherResourcesController(_service);
+            OtherResource expected = _mockdata.UpdateOtherResource1();
             expected.Name = Guid.NewGuid().ToString();
 
             // Act
@@ -83,8 +83,8 @@ namespace Company.SampleApp.WebApis.Tests.api
         public void DeleteTest()
         {
             // Arrange
-            ResourcesController target = new ResourcesController(_service);
-            Resource expected = _mockdata.DeleteResource1();
+            OtherResourcesController target = new OtherResourcesController(_service);
+            OtherResource expected = _mockdata.DeleteOtherResource1();
             // Act
             var actual = target.Delete(expected.Id) as OkResult;
 
@@ -98,7 +98,7 @@ namespace Company.SampleApp.WebApis.Tests.api
         public void CreateTest_BadRequest()
         {
             // Arrange
-            ResourcesController target = new ResourcesController(_service);
+            OtherResourcesController target = new OtherResourcesController(_service);
 
             // Act
             var actual = target.Post(null) as BadRequestResult;
@@ -112,7 +112,7 @@ namespace Company.SampleApp.WebApis.Tests.api
         public void ReadTest_NotFound()
         {
             // Arrange
-            ResourcesController target = new ResourcesController(_service);
+            OtherResourcesController target = new OtherResourcesController(_service);
 
             // Act
             var actual = target.Get(0) as NotFoundResult;
@@ -125,7 +125,7 @@ namespace Company.SampleApp.WebApis.Tests.api
         public void SearchByNameTest_BadRequest()
         {
             // Arrange
-            ResourcesController target = new ResourcesController(_service);
+            OtherResourcesController target = new OtherResourcesController(_service);
 
             // Act
             var actual = target.Search(null) as BadRequestResult;
@@ -138,7 +138,7 @@ namespace Company.SampleApp.WebApis.Tests.api
         public void UpdateTest_BadRequest()
         {
             // Arrange
-            ResourcesController target = new ResourcesController(_service);
+            OtherResourcesController target = new OtherResourcesController(_service);
 
             // Act
             var actual = target.Put(0, null) as BadRequestResult;
@@ -153,8 +153,8 @@ namespace Company.SampleApp.WebApis.Tests.api
         public void CreateTest_Exception()
         {
             // Arrange
-            ResourcesController target = new ResourcesController(_errorService);
-            Resource expected = _mockdata.NewResource();
+            OtherResourcesController target = new OtherResourcesController(_errorService);
+            OtherResource expected = _mockdata.NewOtherResource();
 
             // Act
             var actual = target.Post(expected) as ObjectResult;
@@ -167,8 +167,8 @@ namespace Company.SampleApp.WebApis.Tests.api
         public void UpdateTest_Exception()
         {
             // Arrange
-            ResourcesController target = new ResourcesController(_errorService);
-            Resource expected = _mockdata.Resource1();
+            OtherResourcesController target = new OtherResourcesController(_errorService);
+            OtherResource expected = _mockdata.OtherResource1();
             expected.Name = Guid.NewGuid().ToString();
 
             // Act
@@ -182,7 +182,7 @@ namespace Company.SampleApp.WebApis.Tests.api
         public void DeleteTest_Exception()
         {
             // Arrange
-            ResourcesController target = new ResourcesController(_errorService);
+            OtherResourcesController target = new OtherResourcesController(_errorService);
 
             // Act
             var actual = target.Delete(-1) as ObjectResult;

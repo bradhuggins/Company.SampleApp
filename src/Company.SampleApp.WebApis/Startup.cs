@@ -43,12 +43,14 @@ namespace Company.SampleApp.WebApis
 		// Repositories
 			services.AddTransient<Repositories.Interfaces.IChildResourceRepository, Repositories.Ef.ChildResourceRepository>();
 			services.AddTransient<Repositories.Interfaces.IResourceRepository, Repositories.Ef.ResourceRepository>();
-		// Services
-			services.AddTransient<Services.Interfaces.IChildResourceService, Services.Core.ChildResourceService>();
+            services.AddTransient<Repositories.Interfaces.IOtherResourceRepository, Repositories.DataSource2.OtherResourceRepository>();
+            // Services
+            services.AddTransient<Services.Interfaces.IChildResourceService, Services.Core.ChildResourceService>();
 			services.AddTransient<Services.Interfaces.IResourceService, Services.Core.ResourceService>();
+            services.AddTransient<Services.Interfaces.IOtherResourceService, Services.Core.OtherResourceService>();
 
 
-			services.AddAutoMapper(typeof(MappingProfile));
+            services.AddAutoMapper(typeof(MappingProfile));
 
             //services.Configure<CookiePolicyOptions>(options =>
             //{

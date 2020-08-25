@@ -21,6 +21,7 @@
 
   <ItemGroup>
 	<ProjectReference Include="..\Company.SampleApp.Data.Ef\Company.SampleApp.Data.Ef.csproj" />
+	<ProjectReference Include="..\Company.SampleApp.Repositories.DataSource2\Company.SampleApp.Repositories.DataSource2.csproj" />
 	<ProjectReference Include="..\Company.SampleApp.Repositories.Ef\Company.SampleApp.Repositories.Ef.csproj" />
 	<ProjectReference Include="..\Company.SampleApp.Repositories.Interfaces\Company.SampleApp.Repositories.Interfaces.csproj" />
 	<ProjectReference Include="..\Company.SampleApp.Services.Core\Company.SampleApp.Services.Core.csproj" />

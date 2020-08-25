@@ -12,7 +12,8 @@ namespace Company.SampleApp.Services.Core.Tests
 					CreateMap<Domain.Client.Dtos.ChildResource, Domain.Models.ChildResource>();
 					CreateMap<Domain.Models.Resource, Domain.Client.Dtos.Resource>();
 					CreateMap<Domain.Client.Dtos.Resource, Domain.Models.Resource>();
-
+                    CreateMap<Domain.Models.OtherResource, Domain.Client.Dtos.OtherResource>();
+                    CreateMap<Domain.Client.Dtos.OtherResource, Domain.Models.OtherResource>();
         }
     }
 

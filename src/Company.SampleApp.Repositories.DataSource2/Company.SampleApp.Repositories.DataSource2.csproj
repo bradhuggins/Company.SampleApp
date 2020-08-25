@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.35" />
+    <PackageReference Include="Microsoft.CodeCoverage" Version="16.7.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\Company.SampleApp.Domain.Models\Company.SampleApp.Domain.Models.csproj" />
+    <ProjectReference Include="..\Company.SampleApp.Repositories.Interfaces\Company.SampleApp.Repositories.Interfaces.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Compile Update="OtherResourceQueries.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>OtherResourceQueries.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <EmbeddedResource Update="OtherResourceQueries.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>OtherResourceQueries.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  
+</Project>
