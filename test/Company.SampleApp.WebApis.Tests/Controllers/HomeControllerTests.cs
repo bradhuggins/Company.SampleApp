@@ -23,32 +23,6 @@ namespace Company.SampleApp.WebApis.Tests.Controllers
             Assert.IsNotNull(result);
         }
 
-		[TestMethod]
-        public void PrivacyTest()
-        {
-            // Arrange
-            HomeController controller = new HomeController();
-
-            // Act
-            ViewResult result = controller.Privacy() as ViewResult;
-
-            // Assert
-            Assert.IsNotNull(result);
-        }
-
-  //      [TestMethod]
-  //      public void ErrorTest()
-  //      {
-  //          // Arrange
-  //          HomeController controller = new HomeController();
-
-  //          // Act
-  //          ViewResult result = controller.Error() as ViewResult;
-
-  //          // Assert
-  //          Assert.IsNotNull(result);
-  //      }
-
 
     }
 }

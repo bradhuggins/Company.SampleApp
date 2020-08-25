@@ -37,4 +37,8 @@
 	<ProjectReference Include="..\Company.SampleApp.Domain.MockData\Company.SampleApp.Domain.MockData.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
 </Project>

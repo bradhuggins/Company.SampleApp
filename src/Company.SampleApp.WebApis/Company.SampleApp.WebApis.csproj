@@ -29,4 +29,8 @@
 	<ProjectReference Include="..\Company.SampleApp.Domain.Client\Company.SampleApp.Domain.Client.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
 </Project>
