@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\**" />
+    <EmbeddedResource Remove="Models\**" />
+    <None Remove="Models\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="appsettings.json" />
   </ItemGroup>
 
@@ -35,10 +41,6 @@
 	<ProjectReference Include="..\..\src\Company.SampleApp.Services.Interfaces\Company.SampleApp.Services.Interfaces.csproj" />
 	<ProjectReference Include="..\..\src\Company.SampleApp.WebApis\Company.SampleApp.WebApis.csproj" />
 	<ProjectReference Include="..\Company.SampleApp.Domain.MockData\Company.SampleApp.Domain.MockData.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Models\" />
   </ItemGroup>
 
 </Project>
