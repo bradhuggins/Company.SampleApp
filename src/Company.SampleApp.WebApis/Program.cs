@@ -8,9 +8,9 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace Company.SampleApp.WebApis
 {
+    [ExcludeFromCodeCoverage]
     public class Program
     {
-	    [ExcludeFromCodeCoverage]
         public static void Main(string[] args)
         {
             var host = CreateHostBuilder(args).Build();

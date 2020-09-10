@@ -14,6 +14,7 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace Company.SampleApp.WebApis
 {
+    [ExcludeFromCodeCoverage]
     public class Startup
     {
 		public static readonly LoggerFactory DbDebugLoggerFactory = new LoggerFactory(new[] { new DebugLoggerProvider() });
@@ -37,7 +38,7 @@ namespace Company.SampleApp.WebApis
                 .UseLoggerFactory(DbDebugLoggerFactory) // Warning: Do not create a new ILoggerFactory instance each time
                 // https://docs.microsoft.com/en-us/ef/core/miscellaneous/logging
                 .UseSqlServer(Configuration.GetConnectionString("PrimaryDatabase"))
-				.AddInterceptors(new WithNoLockInterceptor())
+				//.AddInterceptors(new WithNoLockInterceptor())
             );
 
 		// Repositories
@@ -52,14 +53,7 @@ namespace Company.SampleApp.WebApis
 
             services.AddAutoMapper(typeof(MappingProfile));
 
-            //services.Configure<CookiePolicyOptions>(options =>
-            //{
-            //    // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-            //    options.CheckConsentNeeded = context => true;
-            //});
-
-
-            services.AddControllersWithViews()
+            services.AddControllers()
                 .AddNewtonsoftJson(options =>
                {
                    options.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
@@ -68,20 +62,11 @@ namespace Company.SampleApp.WebApis
                 .AddJsonOptions(options => {
                 options.JsonSerializerOptions.IgnoreNullValues = true;
                 });
-            services.AddRazorPages();
-
-			services.AddMvc()
-               .AddNewtonsoftJson(options =>
-               {
-                   options.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
-                   options.SerializerSettings.Formatting = Newtonsoft.Json.Formatting.None;
-               });
-
+        
             services.AddSwaggerDocumentation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-		[ExcludeFromCodeCoverage]
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseSwaggerDocumentation();
@@ -92,15 +77,13 @@ namespace Company.SampleApp.WebApis
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                //app.UseExceptionHandler("/Home/Error");
+
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
+                // app.UseHsts();
             }
 
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
-
-            //app.UseCookiePolicy();
 
             app.UseRouting();
 
@@ -108,10 +91,7 @@ namespace Company.SampleApp.WebApis
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
-                endpoints.MapRazorPages();
+                endpoints.MapControllers();
             });
         }
     }

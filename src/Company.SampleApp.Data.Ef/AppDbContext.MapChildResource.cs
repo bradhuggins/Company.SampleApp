@@ -12,20 +12,25 @@ namespace Company.SampleApp.Data.Ef
         {
             EntityTypeBuilder<ChildResource> t = modelBuilder.Entity<ChildResource>();
 
-            // t.ToTable("ChildResources");
+            //// Map to a custom table name
+            // t.ToTable("CUSTOM_TABLE_NAME");
 
+            //// Definre primary key(s)
             t.HasKey(x => x.Id);
 
-            // Properties
+            //// Customize Propertiy Mappings
             t.Property(p => p.Name)
+            // .HasColumnName("CUSTOM_COLUMN_NAME") // map property to custom database column name
             // .HasMaxLength(255)
             .HasColumnType("varchar(255)")
             ;
 
-            // Indexes
+
+
+            //// Define Indexes
             t.HasIndex(p => p.Name);
 
-            // Relationships and Navigation
+            //// Define Relationships and Navigation
 
 
         }
