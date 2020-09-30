@@ -5,13 +5,10 @@ using System.Runtime.Serialization;
 
 namespace Company.SampleApp.Domain.Client.Dtos
 {
-	[DataContract]
     public partial class ChildResource
     {
-		[DataMember]
         public int Id { get; set; }
 
-		[DataMember]
         public string Name { get; set; }
 
     }

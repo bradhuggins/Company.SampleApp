@@ -5,7 +5,6 @@ using System.Runtime.Serialization;
 
 namespace Company.SampleApp.Domain.Client.Messages
 {
-    [DataContract]
     public class PagingList<T> : List<T>
     {
         public PagingList() : base()
@@ -20,7 +19,6 @@ namespace Company.SampleApp.Domain.Client.Messages
         {
         }
 
-        [DataMember]
         public int TotalCount { get; set; }
     }
 }

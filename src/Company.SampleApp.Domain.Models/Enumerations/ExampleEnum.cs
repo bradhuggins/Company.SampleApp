@@ -5,7 +5,6 @@ using System.Runtime.Serialization;
 
 namespace Company.SampleApp.Domain.Models.Enumerations
 {    
-	[DataContract]
     public enum ExampleEnum : int
     {
         [EnumMember(Value = "Unknown")]

@@ -6,7 +6,6 @@ using System.Runtime.Serialization;
 
 namespace Company.SampleApp.Domain.Client.Messages
 {
-    [DataContract]
     public partial class ResourceSearchCriteria : SearchCriteriaBase
     {
 		public ResourceSearchCriteria()
@@ -17,11 +16,9 @@ namespace Company.SampleApp.Domain.Client.Messages
             SortFieldName = "Name";
         }
 
-		[DataMember]
 		[Display(Name = "Id")]
         public int? Id { get; set; }	
 
-        [DataMember]
 		[Display(Name = "Name (starts with)")]
         public string NameStartsWith { get; set; }	
 

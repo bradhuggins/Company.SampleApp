@@ -5,16 +5,14 @@ using System.Runtime.Serialization;
 
 namespace Company.SampleApp.Domain.Client.Messages
 {
-    [DataContract]
     public abstract class SearchCriteriaBase : ISearchCriteria
     {
-        [DataMember]
         public string SortFieldName { get; set; }
-        [DataMember]
+
         public Enumerations.SortDirection SortDirection { get; set; }
-        [DataMember]
+
         public int PageNumber { get; set; }
-        [DataMember]
+
         public int PageSize { get; set; }
 
         public SearchCriteriaBase()
