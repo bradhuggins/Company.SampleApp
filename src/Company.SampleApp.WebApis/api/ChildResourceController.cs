@@ -2,17 +2,15 @@
 using Company.SampleApp.Domain.Client.Dtos;
 using Company.SampleApp.Domain.Client.Messages;
 using Company.SampleApp.Services.Interfaces;
-using System;
-using System.Collections.Generic;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Authorization;
+using System;
 #endregion
 
 namespace Company.SampleApp.WebApis.api
 {
     //[Authorize]
-	[Produces("application/json")]
+    [Produces("application/json")]
     [Route("api/v1/childresources")]
     public class ChildResourcesController : BaseController<IChildResourceService>
     {

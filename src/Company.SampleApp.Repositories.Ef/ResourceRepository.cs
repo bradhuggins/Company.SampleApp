@@ -1,11 +1,11 @@
 #region Using Statements
-using System;
-using System.Collections.Generic;
-using System.Linq.Expressions;
 using Company.SampleApp.Data.Ef;
 using Company.SampleApp.Domain.Client.Messages;
 using Company.SampleApp.Domain.Models;
 using Company.SampleApp.Repositories.Interfaces;
+using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
 #endregion
 
 namespace Company.SampleApp.Repositories.Ef

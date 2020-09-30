@@ -1,7 +1,7 @@
 #region Using Statements
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Company.SampleApp.Domain.Client.Enumerations;
 using Company.SampleApp.Domain.Client.Messages;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 #endregion
 
 namespace Company.SampleApp.Tests.Domain.Client.Messages

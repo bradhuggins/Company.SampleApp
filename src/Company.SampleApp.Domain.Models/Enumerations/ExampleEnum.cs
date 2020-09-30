@@ -1,11 +1,9 @@
 #region Using Statements
-using System;
 using System.Runtime.Serialization;
 #endregion
 
 namespace Company.SampleApp.Domain.Models.Enumerations
-{    
-	[DataContract]
+{
     public enum ExampleEnum : int
     {
         [EnumMember(Value = "Unknown")]

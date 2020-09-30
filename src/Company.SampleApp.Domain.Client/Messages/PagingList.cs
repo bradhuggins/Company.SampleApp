@@ -1,11 +1,9 @@
 #region Using Statements
 using System.Collections.Generic;
-using System.Runtime.Serialization;
 #endregion
 
 namespace Company.SampleApp.Domain.Client.Messages
 {
-    [DataContract]
     public class PagingList<T> : List<T>
     {
         public PagingList() : base()
@@ -20,7 +18,7 @@ namespace Company.SampleApp.Domain.Client.Messages
         {
         }
 
-        [DataMember]
         public int TotalCount { get; set; }
+
     }
 }
