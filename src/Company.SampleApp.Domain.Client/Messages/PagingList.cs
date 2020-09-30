@@ -1,6 +1,5 @@
 #region Using Statements
 using System.Collections.Generic;
-using System.Runtime.Serialization;
 #endregion
 
 namespace Company.SampleApp.Domain.Client.Messages

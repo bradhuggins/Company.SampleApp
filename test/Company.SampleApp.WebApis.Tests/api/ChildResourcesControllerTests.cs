@@ -1,11 +1,11 @@
 #region Using Statements
-using System;
 using Company.SampleApp.Domain.Client.Dtos;
 using Company.SampleApp.Domain.Client.Messages;
 using Company.SampleApp.WebApis.api;
 using Company.SampleApp.WebApis.Tests.ServiceMocks;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 #endregion
 
 namespace Company.SampleApp.WebApis.Tests.api

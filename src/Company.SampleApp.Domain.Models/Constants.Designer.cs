@@ -8,10 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Company.SampleApp.Domain.Models {
-    using System;
-    
-    
+namespace Company.SampleApp.Domain.Models
+{
+
+
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>

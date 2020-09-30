@@ -1,6 +1,5 @@
 #region Using Statements
 using Microsoft.EntityFrameworkCore;
-using Company.SampleApp.Data.Ef;
 using System;
 #endregion
 

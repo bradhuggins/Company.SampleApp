@@ -1,7 +1,5 @@
 #region Using Statements
-using System;
 using System.ComponentModel.DataAnnotations;
-using System.Runtime.Serialization;
 #endregion
 
 namespace Company.SampleApp.Domain.Client.Messages

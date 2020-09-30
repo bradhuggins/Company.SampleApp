@@ -1,7 +1,6 @@
 #region Using Statements
 using Company.SampleApp.Domain.Models;
-using System;
-using System.Collections.Generic; 
+using System.Collections.Generic;
 #endregion
 
 namespace Company.SampleApp.Domain.MockData.Models

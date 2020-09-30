@@ -1,11 +1,11 @@
 #region Using Statements
+using Company.SampleApp.Data.Ef;
+using Company.SampleApp.Domain.Client.Enumerations;
+using Company.SampleApp.Domain.Client.Messages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using Company.SampleApp.Data.Ef;
-using Company.SampleApp.Domain.Client.Enumerations;
-using Company.SampleApp.Domain.Client.Messages;
 #endregion
 
 namespace Company.SampleApp.Repositories.Ef

@@ -1,11 +1,10 @@
 ﻿#region Using Statements
+using Company.SampleApp.Domain.Client.Messages;
+using Company.SampleApp.Domain.Models;
 using Company.SampleApp.Repositories.Interfaces;
 using Dapper;
-using System.Data.SqlClient;
-using System;
-using Company.SampleApp.Domain.Models;
 using System.Collections.Generic;
-using Company.SampleApp.Domain.Client.Messages;
+using System.Data.SqlClient;
 using System.Linq;
 #endregion
 

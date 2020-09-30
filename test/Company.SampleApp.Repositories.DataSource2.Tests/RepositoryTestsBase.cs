@@ -1,8 +1,6 @@
 #region Using Statements
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 using Microsoft.Extensions.Configuration;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 #endregion
 
 namespace Company.SampleApp.Repositories.DataSource2.Tests

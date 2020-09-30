@@ -1,8 +1,7 @@
 #region Using Statements
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Company.SampleApp.Domain.Client.Messages;
 using Company.SampleApp.Domain.Models;
-using Company.SampleApp.Repositories;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -10,7 +9,7 @@ using System.Reflection;
 
 namespace Company.SampleApp.Repositories.Ef.Tests
 {
-	[TestClass]
+    [TestClass]
 	public partial class ChildResourceRepositoryTests : RepositoryTestsBase
 	{
 		private Domain.MockData.Models.ChildResources _mockdata = new Domain.MockData.Models.ChildResources();

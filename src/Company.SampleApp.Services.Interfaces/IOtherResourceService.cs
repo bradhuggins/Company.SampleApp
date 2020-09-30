@@ -1,8 +1,7 @@
 #region Using Statements
-using System;
-using System.Collections.Generic;
 using Company.SampleApp.Domain.Client.Dtos;
 using Company.SampleApp.Domain.Client.Messages;
+using System.Collections.Generic;
 #endregion
 
 namespace Company.SampleApp.Services.Interfaces

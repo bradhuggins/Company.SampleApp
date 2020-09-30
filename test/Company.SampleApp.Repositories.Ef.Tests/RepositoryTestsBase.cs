@@ -1,8 +1,8 @@
 #region Using Statements
+using Company.SampleApp.Data.Ef.Tests;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Company.SampleApp.Data.Ef.Tests;
 using System;
 #endregion
 

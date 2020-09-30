@@ -1,7 +1,6 @@
 #region Using Statements
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 #endregion
 
 namespace Company.SampleApp.WebApis.Tests.api
