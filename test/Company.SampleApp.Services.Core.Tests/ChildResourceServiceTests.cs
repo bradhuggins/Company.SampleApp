@@ -1,12 +1,13 @@
 #region Using Statements
+using System;
+using System.Collections.Generic;
 using Company.SampleApp.Domain.Client.Dtos;
 using Company.SampleApp.Domain.Client.Messages;
+using Company.SampleApp.Services.Core.Tests;
 using Company.SampleApp.Services.Core.Tests.RepositoryMocks;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
 #endregion
 
 namespace Company.SampleApp.Services.Core.Tests

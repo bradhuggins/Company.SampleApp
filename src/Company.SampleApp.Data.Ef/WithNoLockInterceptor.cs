@@ -1,6 +1,7 @@
 #region Using Statements
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using System.Data.Common;
+using System.Diagnostics.CodeAnalysis;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Company.SampleApp.Data.Ef
 {
+    [ExcludeFromCodeCoverage]
     public class WithNoLockInterceptor : DbCommandInterceptor
     {
         //private static readonly Regex TableAliasRegex = new Regex(@"(?<tableAlias>\[dbo\]\.\[([\w\d]*)\] AS \[Extent\d+\](?! WITH \(NOLOCK\)))", RegexOptions.Compiled | RegexOptions.Multiline | RegexOptions.IgnoreCase);

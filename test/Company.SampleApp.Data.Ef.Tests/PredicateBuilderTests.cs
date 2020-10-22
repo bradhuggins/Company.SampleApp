@@ -1,5 +1,6 @@
 #region Using Statements
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Company.SampleApp.Data.Ef;
 using System;
 using System.Linq.Expressions;
 #endregion

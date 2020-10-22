@@ -1,10 +1,11 @@
 #region Using Statements
+using System;
 using Company.SampleApp.Domain.Client.Dtos;
 using Company.SampleApp.Domain.Client.Messages;
 using Company.SampleApp.WebApis.api;
 using Company.SampleApp.WebApis.Tests.ServiceMocks;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.AspNetCore.Mvc;
 #endregion
 
 namespace Company.SampleApp.WebApis.Tests.api
@@ -17,7 +18,7 @@ namespace Company.SampleApp.WebApis.Tests.api
         private Domain.MockData.Client.Dtos.Resources _mockdata =  new Domain.MockData.Client.Dtos.Resources();
 
 		[TestMethod]
-        public void CreateTest()
+        public void PostTest()
         {
             // Arrange
             ResourcesController target = new ResourcesController(_service);
@@ -31,7 +32,7 @@ namespace Company.SampleApp.WebApis.Tests.api
         }
 
         [TestMethod]
-        public void ReadTest()
+        public void GetTest()
         {
             // Arrange
             ResourcesController target = new ResourcesController(_service);
@@ -64,12 +65,12 @@ namespace Company.SampleApp.WebApis.Tests.api
 
 
         [TestMethod]
-        public void UpdateTest()
+        public void PutTest()
         {
             // Arrange
             ResourcesController target = new ResourcesController(_service);
             Resource expected = _mockdata.UpdateResource1();
-            expected.Name = "Updated Lookup Type from UpdateTest";
+            expected.Name = Guid.NewGuid().ToString();
 
             // Act
             var actual = target.Put(expected.Id, expected) as OkObjectResult;
@@ -94,7 +95,7 @@ namespace Company.SampleApp.WebApis.Tests.api
 		//// BAD REQUESTS
 
         [TestMethod]
-        public void CreateTest_BadRequest()
+        public void PostTest_BadRequest()
         {
             // Arrange
             ResourcesController target = new ResourcesController(_service);
@@ -108,7 +109,7 @@ namespace Company.SampleApp.WebApis.Tests.api
         }
 
         [TestMethod]
-        public void ReadTest_NotFound()
+        public void GetTest_NotFound()
         {
             // Arrange
             ResourcesController target = new ResourcesController(_service);
@@ -134,7 +135,7 @@ namespace Company.SampleApp.WebApis.Tests.api
         }
 
         [TestMethod]
-        public void UpdateTest_BadRequest()
+        public void PutTest_BadRequest()
         {
             // Arrange
             ResourcesController target = new ResourcesController(_service);
@@ -149,7 +150,7 @@ namespace Company.SampleApp.WebApis.Tests.api
 		//// EXCEPTIONS
 
         [TestMethod]
-        public void CreateTest_Exception()
+        public void PostTest_Exception()
         {
             // Arrange
             ResourcesController target = new ResourcesController(_errorService);
@@ -163,12 +164,12 @@ namespace Company.SampleApp.WebApis.Tests.api
         }
 
         [TestMethod]
-        public void UpdateTest_Exception()
+        public void PutTest_Exception()
         {
             // Arrange
             ResourcesController target = new ResourcesController(_errorService);
             Resource expected = _mockdata.Resource1();
-            expected.Name = "Updated Lookup Type from UpdateTest";
+            expected.Name = Guid.NewGuid().ToString();
 
             // Act
             var actual = target.Put(expected.Id, expected) as ObjectResult;

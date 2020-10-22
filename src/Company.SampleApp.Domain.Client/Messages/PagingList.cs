@@ -19,6 +19,5 @@ namespace Company.SampleApp.Domain.Client.Messages
         }
 
         public int TotalCount { get; set; }
-
     }
 }

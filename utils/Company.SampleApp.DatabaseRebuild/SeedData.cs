@@ -1,5 +1,6 @@
 #region Using Statements
 using Company.SampleApp.Data.Ef;
+using Company.SampleApp.Domain.MockData;
 #endregion
 
 namespace Company.SampleApp.DatabaseRebuild

@@ -1,6 +1,6 @@
 #region Using Statements
-using Company.SampleApp.Domain.Client.Messages;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Company.SampleApp.Domain.Client.Messages;
 using System.Collections.Generic;
 #endregion
 

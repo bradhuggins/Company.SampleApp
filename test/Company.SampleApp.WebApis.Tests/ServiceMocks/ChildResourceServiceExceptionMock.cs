@@ -1,13 +1,14 @@
 #region Using Statements
+using System;
+using System.Collections.Generic;
 using Company.SampleApp.Domain.Client.Dtos;
 using Company.SampleApp.Domain.Client.Messages;
 using Company.SampleApp.Services.Interfaces;
-using System.Collections.Generic;
 #endregion
 
 namespace Company.SampleApp.WebApis.Tests.ServiceMocks
 {
-    public class ChildResourceServiceExceptionMock : IChildResourceService
+public class ChildResourceServiceExceptionMock : IChildResourceService
     {
         public string ErrorMessage { get; set; }
 

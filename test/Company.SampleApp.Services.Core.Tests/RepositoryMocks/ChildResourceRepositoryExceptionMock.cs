@@ -1,9 +1,9 @@
 #region Using Statements
+using System;
+using System.Collections.Generic;
 using Company.SampleApp.Domain.Client.Messages;
 using Company.SampleApp.Domain.Models;
 using Company.SampleApp.Repositories.Interfaces;
-using System;
-using System.Collections.Generic;
 #endregion
 
 namespace Company.SampleApp.Services.Core.Tests.RepositoryMocks

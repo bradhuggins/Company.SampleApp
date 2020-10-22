@@ -1,5 +1,6 @@
 #region Using Statements
 using Microsoft.EntityFrameworkCore;
+using Company.SampleApp.Data.Ef;
 #endregion
 
 namespace Company.SampleApp.Data.Ef.Tests

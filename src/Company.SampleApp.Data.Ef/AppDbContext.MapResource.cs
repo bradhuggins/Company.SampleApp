@@ -26,7 +26,6 @@ namespace Company.SampleApp.Data.Ef
             ;
 
 
-
             //// Define Indexes
             t.HasIndex(p => p.Name);
 

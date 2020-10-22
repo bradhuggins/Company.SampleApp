@@ -1,7 +1,7 @@
 #region Using Statements
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics.CodeAnalysis;
 #endregion
@@ -35,7 +35,7 @@ namespace Company.SampleApp.WebApis
 
                     // Call AddEnvironmentVariables last if you need to allow environment
                     // variables to override values from other providers.
-                    //config.AddEnvironmentVariables(prefix: "ARCHITECTURE_");
+                    //config.AddEnvironmentVariables(prefix: "APPENV_");
 
                     // Call AddCommandLine last to allow arguments to override other configuration.
                     //config.AddCommandLine(args);
@@ -46,7 +46,7 @@ namespace Company.SampleApp.WebApis
                 {
                     // Default providers and default order
                     logging.AddConfiguration(hostingContext.Configuration.GetSection("Logging"));
-                    logging.AddConsole();
+                    //logging.AddConsole();
                     logging.AddDebug();
                     //logging.AddEventSourceLogger();
 

@@ -51,7 +51,7 @@ namespace Company.SampleApp.WebApis
 
 			services.AddAutoMapper(typeof(MappingProfile));
 
-            services.AddControllers()
+		services.AddControllers()
                 .AddNewtonsoftJson(options =>
                {
                    options.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
@@ -60,15 +60,13 @@ namespace Company.SampleApp.WebApis
                 .AddJsonOptions(options => {
                 options.JsonSerializerOptions.IgnoreNullValues = true;
                 });
-        
+
             services.AddSwaggerDocumentation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseSwaggerDocumentation();
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -76,21 +74,28 @@ namespace Company.SampleApp.WebApis
             else
             {
                 //app.UseExceptionHandler("/Home/Error");
-
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 // app.UseHsts();
             }
 
             app.UseHttpsRedirection();
 
+
+
             app.UseRouting();
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
+		app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+
+            if (!env.IsProduction())
+            {
+                app.UseSwaggerDocumentation();
+            }
+
         }
     }
 }

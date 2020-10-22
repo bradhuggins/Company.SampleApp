@@ -1,11 +1,11 @@
 #region Using Statements
 using AutoMapper;
+using System;
+using System.Collections.Generic;
+using Microsoft.Extensions.Logging;
 using Company.SampleApp.Domain.Client.Messages;
 using Company.SampleApp.Repositories.Interfaces;
 using Company.SampleApp.Services.Interfaces;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
 #endregion
 
 namespace Company.SampleApp.Services.Core

@@ -11,7 +11,7 @@ namespace Company.SampleApp.Domain.Client.Messages
         public bool HasError 
         {
             get { return !string.IsNullOrEmpty(this.ErrorMessage); }
-            private set { bool result = value; } 
+            //private set { bool result = value; } 
         }
 
         public List<T> Results { get; set; }

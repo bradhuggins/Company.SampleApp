@@ -1,7 +1,7 @@
 #region Using Statements
-using Company.SampleApp.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using Company.SampleApp.Domain.Models;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 #endregion

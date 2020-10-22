@@ -1,4 +1,5 @@
 #region Using Statements
+using AutoMapper;
 #endregion
 
 namespace Company.SampleApp.Services.Core

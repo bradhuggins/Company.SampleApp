@@ -1,8 +1,8 @@
 #region Using Statements
-using Company.SampleApp.Data.Ef;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Company.SampleApp.Data.Ef;
 using System;
 #endregion
 
