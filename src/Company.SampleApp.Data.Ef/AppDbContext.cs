@@ -28,9 +28,6 @@ namespace Company.SampleApp.Data.Ef
 			this.MapChildResource(modelBuilder);
 			this.MapResource(modelBuilder);
 
-
-            //this.MapStringTypeToVarchar(modelBuilder);
-            this.TrimStringPropertiesForAllEntities(modelBuilder);
         }
 
         [ExcludeFromCodeCoverage]
@@ -40,33 +37,5 @@ namespace Company.SampleApp.Data.Ef
             Database.EnsureCreated();
         }
 
-        //public void MapStringTypeToVarchar(ModelBuilder modelBuilder)
-        //{
-        //    //use varchar for all string fields
-        //    foreach (var pb in modelBuilder.Model
-        //        .GetEntityTypes()
-        //        .SelectMany(t => t.GetProperties())
-        //        .Where(p => p.ClrType == typeof(string))
-        //        .Select(p => modelBuilder.Entity(p.DeclaringEntityType.ClrType).Property(p.Name)))
-        //    {
-        //        pb.HasColumnType("varchar(255)");
-        //    }
-        //}
-
-        public void TrimStringPropertiesForAllEntities(ModelBuilder modelBuilder)
-        {
-            foreach (var pb in modelBuilder.Model
-                .GetEntityTypes()
-                .SelectMany(t => t.GetProperties())
-                .Where(p => p.ClrType == typeof(string))
-                .Select(p => modelBuilder.Entity(p.DeclaringEntityType.ClrType).Property(p.Name)))
-            {
-                pb.HasConversion(
-                    new ValueConverter<string,string>(v => v.Trim(), v => v.Trim())
-                    );
-            }
-        }
-
     }
-
 }
