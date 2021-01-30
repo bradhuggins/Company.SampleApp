@@ -1,5 +1,5 @@
 # Company.SampleApp
-Sample .NET Core 3.1 layered API application
+Sample .NET 5 RESTful API microservice
 
 
 ### About

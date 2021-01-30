@@ -86,7 +86,7 @@ namespace Company.SampleApp.WebApis.Tests.api
             ResourcesController target = new ResourcesController(_service);
             Resource expected = _mockdata.DeleteResource1();
             // Act
-            var actual = target.Delete(expected.Id) as OkResult;
+            var actual = target.Delete(expected.Id) as NoContentResult;
 
             // Assert
             Assert.IsNotNull(actual);

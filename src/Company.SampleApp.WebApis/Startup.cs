@@ -49,7 +49,7 @@ namespace Company.SampleApp.WebApis
 			services.AddTransient<Services.Interfaces.IResourceService, Services.Core.ResourceService>();
 
 
-			services.AddAutoMapper(typeof(MappingProfile));
+			services.AddAutoMapper(typeof(Services.Core.AutoMapperMappingProfile));
 
 		services.AddControllers()
                 .AddNewtonsoftJson(options =>

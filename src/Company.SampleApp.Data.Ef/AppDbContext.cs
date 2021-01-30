@@ -28,6 +28,7 @@ namespace Company.SampleApp.Data.Ef
 			this.MapChildResource(modelBuilder);
 			this.MapResource(modelBuilder);
 
+
         }
 
         [ExcludeFromCodeCoverage]
@@ -38,4 +39,5 @@ namespace Company.SampleApp.Data.Ef
         }
 
     }
+
 }

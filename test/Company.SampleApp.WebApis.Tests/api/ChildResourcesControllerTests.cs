@@ -86,7 +86,7 @@ namespace Company.SampleApp.WebApis.Tests.api
             ChildResourcesController target = new ChildResourcesController(_service);
             ChildResource expected = _mockdata.DeleteChildResource1();
             // Act
-            var actual = target.Delete(expected.Id) as OkResult;
+            var actual = target.Delete(expected.Id) as NoContentResult;
 
             // Assert
             Assert.IsNotNull(actual);

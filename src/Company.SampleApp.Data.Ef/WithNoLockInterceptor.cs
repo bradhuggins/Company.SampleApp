@@ -28,13 +28,13 @@ namespace Company.SampleApp.Data.Ef
             return base.ScalarExecuting(command, eventData, result);
         }
 
-        public override Task<InterceptionResult<DbDataReader>> ReaderExecutingAsync(DbCommand command, CommandEventData eventData, InterceptionResult<DbDataReader> result, CancellationToken cancellationToken = default)
+        public override ValueTask<InterceptionResult<DbDataReader>> ReaderExecutingAsync(DbCommand command, CommandEventData eventData, InterceptionResult<DbDataReader> result, CancellationToken cancellationToken = default)
         {
             command.CommandText = WithNoLockInterceptor.TableAliasRegex.Replace(command.CommandText, "${tableAlias} WITH (NOLOCK)");
             return base.ReaderExecutingAsync(command, eventData, result, cancellationToken);
         }
 
-        public override Task<InterceptionResult<object>> ScalarExecutingAsync(DbCommand command, CommandEventData eventData, InterceptionResult<object> result, CancellationToken cancellationToken = default)
+        public override ValueTask<InterceptionResult<object>> ScalarExecutingAsync(DbCommand command, CommandEventData eventData, InterceptionResult<object> result, CancellationToken cancellationToken = default)
         {
             command.CommandText = WithNoLockInterceptor.TableAliasRegex.Replace(command.CommandText, "${tableAlias} WITH (NOLOCK)");
             return base.ScalarExecutingAsync(command, eventData, result, cancellationToken);

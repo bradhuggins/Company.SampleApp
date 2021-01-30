@@ -40,7 +40,7 @@
       </Rules>
       <AnalyzerSettings>
         <StringProperty Name="CompanyName">Company Name</StringProperty>
-        <StringProperty Name="Copyright">Copyright 2020. All Rights Reservered</StringProperty>
+        <StringProperty Name="Copyright">Copyright 2021. All Rights Reservered</StringProperty>
       </AnalyzerSettings>
     </Analyzer>
   </Analyzers>

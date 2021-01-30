@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Company.SampleApp.WebApis.api
 {
-    public abstract class BaseController<T> : Controller where T : class
+    public abstract class BaseController<T> : ControllerBase where T : class
     {
         internal readonly T _service;
 
