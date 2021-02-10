@@ -3,6 +3,8 @@ using AutoMapper;
 using Company.SampleApp.Data.Ef;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -51,15 +53,25 @@ namespace Company.SampleApp.WebApis
 
 			services.AddAutoMapper(typeof(Services.Core.AutoMapperMappingProfile));
 
-		services.AddControllers()
+		    services.AddControllers()
                 .AddNewtonsoftJson(options =>
-               {
-                   options.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
-                   options.SerializerSettings.Formatting = Newtonsoft.Json.Formatting.None;
-               })
+                {
+                    options.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
+                    options.SerializerSettings.Formatting = Newtonsoft.Json.Formatting.None;
+                })
                 .AddJsonOptions(options => {
                 options.JsonSerializerOptions.IgnoreNullValues = true;
                 });
+
+            services.AddApiVersioning(options => {
+                options.AssumeDefaultVersionWhenUnspecified = true;
+                options.DefaultApiVersion = ApiVersion.Default;  // or new ApiVersion(1, 1); //1.1
+                options.ApiVersionReader = ApiVersionReader.Combine(
+                    new QueryStringApiVersionReader("version"), // querystring with version=1.0
+                    new HeaderApiVersionReader("x-version") // header with x-version = 1.0
+                    );
+                options.ReportApiVersions = true;
+            });
 
             services.AddSwaggerDocumentation();
         }

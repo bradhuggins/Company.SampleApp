@@ -13,7 +13,8 @@ namespace Company.SampleApp.WebApis.api
 {
     //[Authorize]
 	[Produces("application/json")]
-    [Route("api/v1/resources")]
+    [Route("api/resources")]
+    [ApiVersion("1.0")]
     [ApiController]
     public class ResourcesController : BaseController<IResourceService>
     {
